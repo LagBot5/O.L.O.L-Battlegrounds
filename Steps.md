@@ -1,0 +1,51 @@
+# Chars(classes)
+- [ ] **Properties**
+  - [ ] Element
+  - [ ] Classes (Mage/Warrior)
+  - [ ] Name
+  - [ ] img
+  - [ ] skills
+  - [ ] health
+    - [ ] graphics
+    - [ ] amount
+    - [ ] %
+  - [ ] mana
+  - [ ] position
+- [ ] **Skills**
+  - [ ] element/name
+  - [ ] damage
+    - [ ] DOT?
+    - [ ] Charge
+    - [ ] Mana Cost
+    - [ ] Cooldown
+
+# Functions (What they do)
+- [ ] **Combat**
+  - [ ] mana
+  - [ ] 3 main actions (attack/defend/rest)
+  - [ ] skills
+  - [ ] health
+  - [ ] turn based
+  - [ ] status effects
+- [ ] **Character Select**
+  - [ ] Hover over character
+    - [ ] have skill descriptions
+    - [ ] shows the skills
+    - [ ] voice over (Optional)
+  - [ ] randomized map
+  - [ ] weakness
+
+# Graphics
+- [ ] **Menu Screen**
+  - [ ] buttons
+  - [ ] title
+- [ ] **Character Select**
+  - [ ] Character Option
+  - [ ] Skill Customization
+  - [ ] Chosen Animation
+- [ ] **Combat**
+  - [ ] random arena
+  - [ ] skills/actions
+  - [ ] Hp bar
+  - [ ] characters
+- [ ] **Win/Lose**
