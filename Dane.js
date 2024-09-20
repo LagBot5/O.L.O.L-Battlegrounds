@@ -7,7 +7,7 @@ function setup() {
 	background("white");
 	FireArena.resize(1200, 600)
 	playing()
-
+	
 }
 
 function draw() {}
@@ -18,6 +18,12 @@ function playing() {
 	rect(0, 600, 1200, 200)
 	fill("#8E6E6E")
 	rect(50, 625, 1100, 150)
+	fill("grey")
+	quad(10, 10, 10, 50, 450, 50, 450, 10)
+	quad(740, 10, 740, 50, 1180, 50, 1180, 10)
+	fill("red")
+	quad(20, 20, 20, 40, 440, 40, 440, 20)
+	quad(750, 20, 750, 40, 1170, 40, 1170, 20)
 	CharacterIcon()
 	basicAttacks()
 	skillOne()
@@ -26,7 +32,7 @@ function playing() {
 }
 
 function CharacterIcon() {
-strokeWeight(3)
+	strokeWeight(3)
 	fill("#D9D9D9")
 	circle(150, 700, 130)
 }
@@ -59,3 +65,9 @@ function skillThree() {
 }
 
 // https://openprocessing.org/sketch/2357584
+
+class Health {
+	constructor(amount) {
+		this.HP = amount
+	}
+}
