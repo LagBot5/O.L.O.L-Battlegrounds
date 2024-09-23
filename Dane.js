@@ -64,10 +64,11 @@ function skillThree() {
 	rect(900, 635, 200, 130)
 }
 
-// https://openprocessing.org/sketch/2357584
 
 class Health {
 	constructor(amount) {
 		this.HP = amount
 	}
 }
+
+// https://openprocessing.org/sketch/2357584
