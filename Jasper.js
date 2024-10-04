@@ -50,7 +50,142 @@ function TurnEnd( Players ) {
 }
 
 
-// Skills code
+//Class for elements 
+class element{
+	constructor ( name, weakness){
+		this.name = name
+		this.weakness = weakness
+	}
+}
+
+
+// classSkills
+class skill{
+	constructor ( name, dmg, manacost, element, type){
+		this.name = name
+		this.dmg = dmg
+		this.manacost = manacost
+		this.element = element
+		this.type = type
+	}
+}
+
+class buff extends skill {
+	constuctor( name, dmg, manacost, element, type, defense, duration ){
+		this.defense = defense
+		this.duration = duration
+	}
+}
+
+
+// class for Characters
+class Character {
+	constructor ( name, fightingStyle, element, health, defense, mana, img, skill1, skill2, skill3, skill4){
+		this.name = name
+		this.fightingStyle = fightingStyle
+		this.element = element
+		this.health = health
+		this.defense = defense
+		this.mana = mana
+		this.img =img
+		this.SkillLibrary = [ skill1, skill2, skill3, skill4]
+		this.status = 
+		this.statusDur = 
+		this. selectedSkills = []
+	}
+	
+	action(Action, TargetedPlayer){
+		print(Action.type)
+		if (Action.type == 'attack'){
+			//Variables
+			let dmg
+			let p2def
+			dmg = Action.dmg
+			p2def = TargetedPlayer.defense
+			
+			//Algorithm
+			this.mana -= Action.manacost
+			print('TargetedPlayerStatusDur:' + TargetedPlayer.statusDur)
+			if (TargetedPlayer.element.weakness == Action.element.name ){
+				print("weaknessEnabled")
+				dmg = dmg*1.10
+			}
+			if (this.statusDur > 0){
+				dmg += this.status.dmg	
+				this.statusDur --
+				print('CurrentStatus: True')
+			}
+			if (TargetedPlayer.statusDur > 0){
+				p2def += TargetedPlayer.status.defense
+				TargetedPlayer.statusDur--
+				print('TargetedStatus: True')
+			}
+			
+			TargetedPlayer.health -= Math.round(dmg*((100 - p2def)/100))
+			print( 'Player2 Health: ' + TargetedPlayer.health , 'mana: ' + this.mana)
+		}
+		
+		if (Action.type == 'buff'){
+			print('hekllo')
+			if (this.statusDur <= 0 || !this.status){
+				print("buff")
+				print( "Mana: " + this.mana)
+				this.status = Action
+				print('BuffDef: ' + Action.defense)
+				print('BuffDur: ' + Action.duration)
+				this.statusDur = Action.duration
+			}
+			else {
+				print("buff refused")
+				this.statusDur--
+			}
+		}
+		
+		if (Action.type == 'debuff'){
+			this.mana -= Action.manacost
+			TargetedPlayer.status = Action
+		}
+	}
+}
+
+
+//Calling Objects
+let elements = [
+	neutral = new element ('neutral', 'none'),
+	fire = new element ( 'fire', 'water' ),
+	water = new element ( 'water', 'earth' ),
+	earth = new element ('earth', 'air'),
+	air = new element ( 'air', 'fire')
+]
+
+
+let skills = [ 
+	
+	//GLobal Skills
+	new skill('attack', 10, -5, neutral, 'attack'),
+	new buff('defense', 0, -5, neutral, 'buff',30, 2),
+	new buff('rest', 0, -30, neutral,'buff', 0, 1 ),
+	
+	//Dante
+	new skill('FireGetsuga', 20, 15, fire, 'attack'),
+	new skill('Amaterasu', 30, 25, fire, 'attack'),
+	new skill('SuperSaiyan', 0, 20, neutral, 'buff'),
+	new skill('FinalKamehameha', 75, 80, neutral, 'attack'),
+	// add charge up time for finalKamehameha
+	
+	// Mr Lam
+	new buff('Coffee', 5, 20, neutral, 'buff', 5, 3),
+	new skill('Smash', 15, 10, air, 'attack'),
+	new skill('BadmintonDefense', 0, 15, neutral, 'buff'),
+	new skill('Scooter',20, 15, air, 'attack')
+]
+
+
+
+let Characters = [
+	new Character( 'Dante', 'Warror', fire, 100, 10, 80, 'not here yet', skills[3], skills[4], skills[5], skills[6] ),
+	new Character( 'Mr. Lam', 'Mage', air, 100, 10, 80, 'not here yet', skills[7], skills[8], skills[9], skills[10])
+]
 
 class skill{
 	constructor ( name, dmg, manacost, element, type, status){
