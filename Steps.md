@@ -1,51 +1,51 @@
 # Chars(classes)
-- [ ] **Properties**
-  - [ ] Element
-  - [ ] Classes (Mage/Warrior)
-  - [ ] Name
-  - [ ] img
-  - [ ] skills
-  - [ ] health
-    - [ ] graphics
-    - [ ] amount
-    - [ ] %
-  - [ ] mana
-  - [ ] position
-- [ ] **Skills**
-  - [ ] element/name
-  - [ ] damage
-    - [ ] DOT?
-    - [ ] Charge
-    - [ ] Mana Cost
-    - [ ] Cooldown
+- [X] **Properties**
+  - [X] Element
+  - [X] Classes (Mage/Warrior)
+  - [X] Name
+  - [X] img
+  - [X] skills
+  - [X] health
+    - [X] graphics
+    - [X] amount
+    - [X] %
+  - [X] mana
+  - [X] position
+- [x] **Skills**
+  - [X] element/name
+  - [x] damage
+    - [x] DOT?
+    - [x] Charge
+    - [x] Mana Cost
+    - [x] Cooldown
 
 # Functions (What they do)
-- [ ] **Combat**
-  - [ ] mana
-  - [ ] 3 main actions (attack/defend/rest)
-  - [ ] skills
-  - [ ] health
-  - [ ] turn based
-  - [ ] status effects
+- [x] **Combat**
+  - [x] mana
+  - [x] 3 main actions (attack/defend/rest)
+  - [x] skills
+  - [x] health
+  - [x] turn based
+  - [x] status effects
 - [ ] **Character Select**
-  - [ ] Hover over character
+  - [x] Hover over character
     - [ ] have skill descriptions
-    - [ ] shows the skills
+    - [x] shows the skills
     - [ ] voice over (Optional)
   - [ ] randomized map
-  - [ ] weakness
+  - [x] weakness
 
 # Graphics
-- [ ] **Menu Screen**
-  - [ ] buttons
-  - [ ] title
+- [x] **Menu Screen**
+  - [x] buttons
+  - [x] title
 - [ ] **Character Select**
-  - [ ] Character Option
-  - [ ] Skill Customization
+  - [x] Character Option
+  - [x] Skill Customization
   - [ ] Chosen Animation
 - [ ] **Combat**
   - [ ] random arena
-  - [ ] skills/actions
-  - [ ] Hp bar
-  - [ ] characters
+  - [x] skills/actions
+  - [x] Hp bar
+  - [x] characters
 - [ ] **Win/Lose**
